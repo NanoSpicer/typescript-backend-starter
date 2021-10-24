@@ -18,7 +18,8 @@
     "lint": "npx eslint src/**/*.ts --fix",
     "lint:ci": "npx eslint src/**/*.ts",
     "test": "npx jest --watch",
-    "test:ci": "npx jest"
+    "test:ci": "npx jest",
+    "gen-types:db": "npx ts-node knex-types.ts"
   },
   "repository": {
     "type": "git",
@@ -51,6 +52,7 @@
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "jest": "^27.2.2",
+    "knex-types": "^0.3.1",
     "nodemon": "^2.0.13",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
