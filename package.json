@@ -66,8 +66,6 @@
   },
   "dependencies": {
     "apollo-server-core": "^3.3.0",
-    "apollo-server-express": "^3.3.0",
-    "express": "^4.17.1",
     "graphql": "^15.6.0",
     "knex": "^0.95.11",
     "pg": "^8.7.1"
