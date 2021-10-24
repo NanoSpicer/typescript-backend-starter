@@ -6,6 +6,8 @@
   "scripts": {
     "build": "npx tsc -p tsconfig.json",
     "watch": "npx tsc -p tsconfig.json --watch",
+    "prestart": "npm run gen-types",
+    "prebuild": "npm run gen-types",
     "start": "nodemon --exec ts-node src/app.ts",
     "setup": "npm i && npm run setup-db",
     "setup:seed-all": "npm i && npm run setup-db && npm run seed",
@@ -19,7 +21,9 @@
     "lint:ci": "npx eslint src/**/*.ts",
     "test": "npx jest --watch",
     "test:ci": "npx jest",
-    "gen-types:db": "npx ts-node knex-types.ts"
+    "gen-types:gql": "npx graphql-codegen --config codegen.yml",
+    "gen-types:db": "npx ts-node knex-types.ts",
+    "gen-types": "npm run gen-types:db && npm run gen-types:gql"
   },
   "repository": {
     "type": "git",
@@ -44,12 +48,15 @@
     }
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.2.1",
+    "@graphql-codegen/typescript-resolvers": "^2.3.2",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.0.2",
     "@typescript-eslint/eslint-plugin": "^5.1.0",
     "@typescript-eslint/parser": "^5.1.0",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
+    "graphql-codegen": "^0.4.0",
     "jest": "^27.2.2",
     "knex-types": "^0.3.1",
     "nodemon": "^2.0.13",
