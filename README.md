@@ -25,7 +25,7 @@ $ npm start
 
 ## Libraries
   * 🕸 Interfacing – GraphQL
-  * 🖥 Server – Express
+  * 🖥 Server – Fastify
   * 💾 DatabaseAccess – Knex
   * 🧪 Testing – Jest
   * 💻 Language – TypeScript
